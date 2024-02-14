@@ -20,3 +20,60 @@ Setting vim options in lua
 * Jump to tags `<C-]>` go back `<C-o>` or `<C-t>`
 * `:help` to launch docs or `:help <topic>`
 * `:terminal`
+
+## Lua Language 
+* None/NULL value is `nil`
+* include `filename.lua` file use `require('filename')`
+
+### Table
+Data structure in lua, something like a list
+```
+-- table -------------------------
+-- table is like a list/vector in lua
+local color = { "red", 1, "blue" } 
+
+-- starting index is 1
+print(color[1])
+print(color[2])
+
+-- length
+local size = #color
+
+-- iterate
+for i=1, #color do
+    print(color[i])
+end
+
+-- insert at end
+table.insert(color, "mycolor")
+
+-- remove at index 2
+table.remove(color, 2)
+
+-- nested tables
+local nestedTable = { {"samad", 667} , { "wardah", 123 } }
+```
+
+### Key Tables
+Something like a map
+```
+-- define
+local number = {
+    ["samad"] = 15,
+    ["wardah"] = 7
+}
+
+-- access elements
+print(number["samad"])
+
+-- iterate
+for key, value in pairs(number) do
+    print(key .. ":" .. value)
+end
+
+-- insert
+number["x"] = 5
+
+-- delete
+number["samad"] = nil
+```
