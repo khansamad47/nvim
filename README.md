@@ -2,7 +2,8 @@
 Nvim configuration and notes
 
 ## Links
-[Official Docs]()
+[Official Docs]
+[lazy.nvim setup](https://www.youtube.com/watch?v=6mxWayq-s9I&t)
 
 ## Features
 1. [`:terminal`](https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal) nvim offers terminal integration from with-in nvim
@@ -20,6 +21,10 @@ Setting vim options in lua
 * Jump to tags `<C-]>` go back `<C-o>` or `<C-t>`
 * `:help` to launch docs or `:help <topic>`
 * `:terminal`
+
+## LAZY.NVIM
+* `:Lazy` to bring up the console
+* To install plugins create a file in `lua/plugins/plugin-name.lua` and return a lua table
 
 ## Lua Language 
 * None/NULL value is `nil`
