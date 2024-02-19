@@ -1,8 +1,10 @@
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.opt["tabstop"] = 4
 vim.opt["shiftwidth"] = 4
 vim.opt["number"] = true
+
+-- Load keymaps
+require("core.keymaps")
 
 -- Configure clipboard
 vim.cmd("set clipboard=unnamedplus")

@@ -2,8 +2,8 @@
 Nvim configuration and notes
 
 ## Links
-[Official Docs]
-[lazy.nvim setup](https://www.youtube.com/watch?v=6mxWayq-s9I&t)
+[lazy.nvim setup YouTube](https://www.youtube.com/watch?v=6mxWayq-s9I&t)
+[git link](https://github.com/josean-dev/dev-environment-files)
 
 ## Features
 1. [`:terminal`](https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal) nvim offers terminal integration from with-in nvim
