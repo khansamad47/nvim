@@ -21,6 +21,10 @@ Setting vim options in lua
 * Jump to tags `<C-]>` go back `<C-o>` or `<C-t>`
 * `:help` to launch docs or `:help <topic>`
 * `:terminal`
+### Telescope [Full list](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#default-mappings)
+* `<C-t>` open selection in new tab
+* `<C-x>` open selection in split
+* `<C-v>` open selection in vsplit
 
 ## LAZY.NVIM
 * `:Lazy` to bring up the console
