@@ -1,13 +1,11 @@
-vim.g.mapleader = " "
-vim.opt["tabstop"] = 4
-vim.opt["shiftwidth"] = 4
-vim.opt["number"] = true
+-- Load globals
+require("core.globals")
 
 -- Load keymaps
 require("core.keymaps")
 
--- Configure clipboard
-vim.cmd("set clipboard=unnamedplus")
+-- Load options
+require("core.options")
 
 -- Setting up lazyvim package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- .. is string contactination operator
