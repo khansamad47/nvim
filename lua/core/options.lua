@@ -19,6 +19,9 @@ vim.opt.cursorline = true     -- highlight curson line
 
 -- Behaviour
 vim.opt.errorbells = false    -- error won't ring bell
+vim.opt.belloff = "all"       -- error won't ring bell
+vim.opt.mouse =
+
 vim.opt.iskeyword:append("-") -- "-" it not a work break
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.splitright = true     -- vertical split is on the right
