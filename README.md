@@ -23,6 +23,9 @@ Setting vim options in lua
 * `:terminal`
 
 ### Telescope [Full list](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#default-mappings)
+* `<Leader-ff>` find files
+* `<Leader-fg>` find git files
+* `<Leader-f/>` fuzzy search
 * `<C-t>` open selection in new tab
 * `<C-x>` open selection in split
 * `<C-v>` open selection in vsplit
