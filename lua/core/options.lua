@@ -20,7 +20,7 @@ vim.opt.cursorline = true     -- highlight curson line
 -- Behaviour
 vim.opt.errorbells = false    -- error won't ring bell
 vim.opt.belloff = "all"       -- error won't ring bell
-vim.opt.mouse =
+vim.opt.mouse = ""            -- disables mouse so right-click works to paste
 
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.splitright = true     -- vertical split is on the right
