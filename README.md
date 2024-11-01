@@ -21,6 +21,11 @@ Setting vim options in lua
 * Jump to tags `<C-]>` go back `<C-o>` or `<C-t>`
 * `:help` to launch docs or `:help <topic>`
 * `:terminal`
+* visual mode select then `:!<script_here>` will pass the selection to the script via std::cin
+* `:vimgrep /pattern/ [files/*]` will start a `quickfix (:help quickfix)` for the search term `:cnext/:cn :cprev/:cp :copen (to view all)`     
+
+### LSP
+* `<leader>g` to view the diagnostic error 
 
 ### Telescope [Full list](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#default-mappings)
 * `<Leader-ff>` find files
