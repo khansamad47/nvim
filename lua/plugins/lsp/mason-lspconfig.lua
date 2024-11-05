@@ -5,6 +5,7 @@ return {
             "clangd",
             -- "kotlin_language_server",
             "pyright",
+            "lua_ls",
         },
         automatic_installation = false, -- For Bloomberg
     },
