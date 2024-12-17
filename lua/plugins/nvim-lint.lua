@@ -21,11 +21,12 @@ return {
           end,
         }
 
-        require('lint').linters.bde_verify = {
+        lint.linters.bde_verify = {
           cmd = 'bde_verify',        -- Ensure bde_verify is in your PATH
           stdin = false,
           args = {},                 -- Add any needed arguments for bde_verify
           ignore_exitcode = true,
+          stream = 'stderr',
           parser = function(output, bufnr)
             local diagnostics = {}
             for line in vim.gsplit(output, '\n', true) do
