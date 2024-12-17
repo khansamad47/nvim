@@ -18,7 +18,7 @@ Setting vim options in lua
 * `set tabstop = 4` `vim.opt["tabstop"] = 4`
 
 ## Keys
-* Jump to tags `<C-]>` go back `<C-o>` or `<C-t>`
+* Jump to tags `<C-]>` go back `<C-t>`
 * `:help` to launch docs or `:help <topic>`
 * `:terminal`
 * visual mode select then `:!<script_here>` will pass the selection to the script via std::cin
