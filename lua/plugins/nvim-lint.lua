@@ -2,11 +2,12 @@ return {
     "mfussenegger/nvim-lint",
     config = function()
         local lint = require('lint')
+        local project_root = os.getenv("SPACES__WORKAREA")
 
         lint.linters.bde_verify = {
           cmd = 'bde_verify',        -- Ensure bde_verify is in your PATH
           stdin = false,
-          args = {},                 -- Add any needed arguments for bde_verify
+          args = {"-p", project_root .. "/build", "-config", project_root .. "/bde_verify.cfg"},
           ignore_exitcode = true,
           stream = 'stderr',
           parser = function(output, bufnr)
