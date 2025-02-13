@@ -7,7 +7,7 @@ return {
         lint.linters.bde_verify = {
           cmd = 'bde_verify',        -- Ensure bde_verify is in your PATH
           stdin = false,
-          args = {"-p", project_root .. "/build", "-config", project_root .. "/bde_verify.cfg"},
+          args = {"-std=c++20","-p", project_root .. "/build", "-config", project_root .. "/bde_verify.cfg"},
           ignore_exitcode = true,
           stream = 'stderr',
           parser = function(output, bufnr)
