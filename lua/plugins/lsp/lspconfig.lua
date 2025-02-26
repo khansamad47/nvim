@@ -52,6 +52,9 @@ return {
           if (client.name == "clangd") then
             opts.desc = "Switch Source/Header (C/C++)"
             keymap.set("n", "<leader>q", ":ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
+            keymap.set("n", "<leader>qv", ":vs | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
+            keymap.set("n", "<leader>qx", ":sp | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
+            keymap.set("n", "<leader>qt", ":tab | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary  
           end
         end
 
