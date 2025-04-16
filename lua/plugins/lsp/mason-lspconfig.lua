@@ -4,8 +4,9 @@ return {
         ensure_installed = {
             "clangd",
             -- "kotlin_language_server",
-            "pyright",
             "lua_ls",
+            "pyright",
+            "neocmake",
         },
         automatic_installation = false, -- For Bloomberg
     },

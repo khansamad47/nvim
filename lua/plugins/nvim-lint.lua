@@ -3,6 +3,9 @@ return {
     config = function()
         local lint = require('lint')
         local project_root = os.getenv("SPACES__WORKAREA")
+        if not project_root then
+            project_root = ""
+        end
 
         lint.linters.bde_verify = {
           cmd = 'bde_verify',        -- Ensure bde_verify is in your PATH
@@ -35,8 +38,14 @@ return {
           end,
         }
 
+        local add_if_availble = function(linter_name)
+            if vim.fn.executable(linter_name) == 1 then return true
+            else return false
+            end
+        end
+
         lint.linters_by_ft = {
-            cpp = { "bde_verify" },
+            cpp = { add_if_availble("bde_verify") },
         }
         -- Set up an autocommand to trigger linting on file save
         -- vim.api.nvim_create_autocmd("BufWritePost", {
