@@ -39,7 +39,7 @@ return {
         }
 
         local add_if_availble = function(linter_name)
-            if vim.fn.executable(linter_name) == 1 then return true
+            if vim.fn.executable(linter_name) == 1 then return linter_name
             else return false
             end
         end
