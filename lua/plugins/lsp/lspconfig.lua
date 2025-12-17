@@ -60,8 +60,9 @@ return {
 
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
-        local lspconfig = require("lspconfig")
-        lspconfig.clangd.setup({
+        local lspconfig = vim.lsp.config;
+        -- local lspconfig = require("lspconfig")
+        vim.lsp.config("clangd",{
             capabilities = capabilities,
             on_attach = on_attach,
         })
@@ -69,19 +70,19 @@ return {
         --     capabilities = capabilities,
         --     on_attach = on_attach,
         -- })
-        lspconfig.pyright.setup({
+        vim.lsp.config("pyright",{
             capabilities = capabilities,
             on_attach = on_attach,
         })
-        lspconfig.svelte.setup({
+        vim.lsp.config("svelte",{
             capabilities = capabilities,
             on_attach = on_attach,
         })
-        lspconfig.lua_ls.setup({
+        vim.lsp.config("lua_ls",{
             capabilities = capabilities,
             on_attach = on_attach,
         })
-        lspconfig.neocmake.setup({
+        vim.lsp.config("neocmake",{
             capabilities = capabilities,
             on_attach = on_attach,
         })
