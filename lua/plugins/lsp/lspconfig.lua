@@ -48,13 +48,16 @@ return {
 
           opts.desc = "Restart LSP"
           keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
+          
           if (client.name == "clangd") then
-            opts.desc = "Switch Source/Header (C/C++)"
-            keymap.set("n", "<leader>q", ":ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
-            keymap.set("n", "<leader>qv", ":vs | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
-            keymap.set("n", "<leader>qx", ":sp | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary
-            keymap.set("n", "<leader>qt", ":tab | ClangdSwitchSourceHeader<CR>", opts) -- mapping to restart lsp if necessary  
+              local function switchSourceHeader()
+                  vim.lsp.buf_request(0,"textDocument/switchSourceHeader",{uri=vim.uri_from_bufnr(0)},function(_,r) if r then vim.cmd("edit "..vim.uri_to_fname(r)) end end)
+              end
+              opts.desc = "Switch Source/Header (C/C++)"
+              keymap.set("n", "<leader>q", switchSourceHeader, opts) -- mapping to restart lsp if necessary
+              keymap.set("n", "<leader>qv",function() vim.cmd("vsplit") switchSourceHeader() end, opts) -- mapping to restart lsp if necessary
+              keymap.set("n", "<leader>qx",function() vim.cmd("split")  switchSourceHeader() end, opts) -- mapping to restart lsp if necessary
+              keymap.set("n", "<leader>qt",function() vim.cmd("tab") switchSourceHeader() end, opts) -- mapping to restart lsp if necessary
           end
         end
 
@@ -66,6 +69,7 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
+        vim.lsp.enable("clangd")
         -- lspconfig.kotlin_language_server.setup({
         --     capabilities = capabilities,
         --     on_attach = on_attach,
@@ -74,6 +78,8 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
+        vim.lsp.enable("pyright")
+
         vim.lsp.config("svelte",{
             capabilities = capabilities,
             on_attach = on_attach,
